@@ -85,6 +85,8 @@ func (d SqliteDialect) ToSqlType(val reflect.Type, maxsize int, isAutoIncr bool)
 		return "integer"
 	case "NullableBytes":
 		return "blob"
+	case "Time":
+		return "timestamp"
 	}
 
 	if maxsize < 1 {
