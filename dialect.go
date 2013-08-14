@@ -161,6 +161,8 @@ func (d PostgresDialect) ToSqlType(val reflect.Type, maxsize int, isAutoIncr boo
 		if val.Elem().Kind() == reflect.Uint8 {
 			return "bytea"
 		}
+	case reflect.String:
+		return "text"
 	}
 
 	switch val.Name() {
